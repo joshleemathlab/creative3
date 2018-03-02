@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Creative Project 3</title>
+	<link rel="stylesheet" href="styles.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+    <script src="script.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      * {
+          box-sizing: border-box;
+      }
+
+
+      @media only screen and (max-width: 768px) {
+          /* For mobile phones: */
+          [class*="col-"] {
+              width: 100%;
+          }
+      }
+    </style>
+
+</head>
+
+<body>
+	
+
+  <div class="top-container">
+    <h1>Creative Project 3</h1>
+    <h2>Fin 201 Practice Exams</h2>
+  </div>
+      
+  <!--MENUBAR-->
+  <div class="header" id="myHeader">
+        <ul class="menu">
+        <li class="menu"><a href="index.html" class="menu">Home</a></li>
+        <!--<li class="menu"><a href="stack.html" class="menu">Stack Overflow</a></li>-->
+        <li class="menu"><a href="unit1.html" class="menu">Unit 1</a></li>
+        <li class="menu"><a href="unit2.html" class="menu">Unit 2</a></li>
+
+
+        </ul>
+  </div>
+    
+  <div class="top-container2">
+    <h1>Unit 1</h1>
+  </div>
+<div class="content2">
+<div id="app">
+    
+    <div v-for="(question, index) in quiz.questions">
+        <div v-show="index === questionIndex">
+            
+            <h2>Question #{{question.number}}</h2>
+            <h3>{{ question.question }}</h3>
+            <ol>
+                <li v-for="response in question.responses">
+                    <label>
+                        <input type="radio" v-bind:value="response.correct" v-bind:name="index" v-model="userResponses[index]"> {{response.answer}}
+                    </label>
+
+                </li>
+            </ol> 
+            <button v-if="questionIndex > 0" v-on:click="prev">
+                Prev
+            </button>
+            <button v-on:click="next">
+                Next
+            </button>
+        </div>
+       
+    </div>
+    <div v-show="questionIndex === quiz.questions.length">
+        <h2>
+            Quiz finished
+        </h2>
+        <p>
+            Total score: {{ score() }} / {{ quiz.questions.length }}
+        </p>
+        <button v-on:click="restart">
+			Restart
+		</button>
+    </div>
+</div>
+</div>
+
+
+	<footer class="footer">
+      <a href="https://github.com/joshleemathlab/creative3" target="_blank">My Personal Github</a>
+    </footer>
+
+
+    <!--SCRIPTS-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="script.js"></script>
+    <!--script src="https://unpkg.com/vue-star-rating/dist/star-rating.min.js"></script>-->
+
+      <!--STICKY HEADER-->
+  <script>
+    window.onscroll = function() {myFunction()};
+
+    var header = document.getElementById("myHeader");
+    var sticky = header.offsetTop;
+
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
+  </script>
+    
+</body>
+</html>

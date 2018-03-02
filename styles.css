@@ -1,0 +1,107 @@
+
+
+.footer {
+  text-align: right;
+}
+
+
+ul.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #white;
+    /*background-color: rgba(77,77,77,.75);*/
+    display: inline-flex;
+    justify-content: space-around;
+    top: 0;
+    z-index: 500;
+    text-align: center;
+    
+    opacity: .65;
+}
+
+li.menu {
+    float: left;
+    font-family: "Lato", serif;
+}
+
+li a.menu {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 13px;
+    text-decoration: none;
+}
+li a:hover {
+    
+    color: white;
+}
+
+.footer{
+    bottom:10;
+    margin-right: 10%;
+    
+    width: 100%;
+}
+
+.top-container2 {
+  background-color: #0FBCCC;
+  padding: 10px;
+  text-align: center;
+}
+
+/*STICKY HEADER*/
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.top-container {
+  background-color: #FF6D77;
+  padding: 20px;
+  text-align: center;
+}
+
+.header {
+  
+  background: #FF6D77;
+  color: #f1f1f1;
+}
+
+.content2 {
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+.collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.active, .collapsible:hover {
+    background-color: #555;
+}
+
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+}
