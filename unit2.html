@@ -61,7 +61,7 @@
                     </label>
                 </li>
             </ol> 
-
+            <button v-if="questionIndex == 0" v-on:click="dontpress" v-on:click="counter += 1">Haha</button>
             <button v-if="questionIndex > 0" v-on:click="prev">
                 Prev
             </button>

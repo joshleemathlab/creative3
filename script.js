@@ -58,6 +58,22 @@ new Vue({
     userResponses: Array(quiz.questions.length).fill(false)
   },
   methods: {
+    dontpress: function(){
+      console.log("Nothing was pressed");
+      console.log(counter);
+      counter++;
+      if (event){
+        if (counter>5){
+          alert("AGGGGHH STOP")
+        }
+        else if (counter>3){
+          alert("Seriously, Stop it")
+        }
+        else{
+          alert("Stop it")
+        }
+      }
+    },
     next: function() {
       this.questionIndex++;
     },
@@ -74,3 +90,4 @@ new Vue({
     }
   }
 });
+var counter = 0;
